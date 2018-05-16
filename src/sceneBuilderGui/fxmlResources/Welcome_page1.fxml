@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+fx:controller = "sceneBuilderGui.controllers.WelcomeController">
+   <children>
+      <fx:include fx:id="customerData" source="CustData_page1.fxml" />
+      <Separator prefWidth="200.0" />
+      <fx:include fx:id="restaurantData" source="restData_page1.fxml" />
+   </children>
+</VBox>
