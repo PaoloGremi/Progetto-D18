@@ -9,15 +9,17 @@
 
 <!-- Restaurant description and catalogue button-->
 
-<BorderPane fx:id="restaurantData" prefHeight="300.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="restaurantData" prefHeight="300.0" prefWidth="1000.0"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sceneBuilderGui.controllers.RestDataController">
 
     <!-- Restaurant's promotional image-->
 
            <left>
 
-              <ImageView fx:id="promotionalImage" fitHeight="377.0" fitWidth="626.0" pickOnBounds="true" BorderPane.alignment="CENTER">
+              <ImageView id="promotionalImage" fitHeight="377.0" fitWidth="626.0" pickOnBounds="true" BorderPane.alignment="CENTER">
                  <image>
-                    <Image url="@../../../../img/restaurantData_image.jpg" />
+                    <Image url="@../../img/restaurantData_image.jpg" />
                  </image>
 
                  <BorderPane.margin>
@@ -38,12 +40,13 @@
 
                  <children>
 
-                    <Label fx:id="welcome" prefHeight="44.0" prefWidth="236.0" text="Welcome to our restaurant!" textAlignment="RIGHT">
+                    <Label id="welcome" prefHeight="44.0" prefWidth="236.0" text="Welcome to our restaurant!" textAlignment="RIGHT">
                        <font>
                           <Font name="Lucida Bright Demibold Italic" size="17.0" />
                        </font>
                     </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Customizing your event has never been so easy ! &#10;You can create your own menu selecting dishes&#10;from our catalogue or you can simply choose &#10;one of our menus !What are you waiting for?&#10;&#10;If you want some information, see our contacts :&#10;&#10;-- contacts description&#10;&#10;" textAlignment="JUSTIFY" wrappingWidth="338.65869140625">
+            <Text id="Description"
+                  strokeType="OUTSIDE" strokeWidth="0.0" text="Customizing your event has never been so easy ! &#10;You can create your own menu selecting dishes&#10;from our catalogue or you can simply choose &#10;one of our menus !What are you waiting for?&#10;&#10;If you want some information, see our contacts :&#10;&#10;-- contacts description&#10;&#10;" textAlignment="JUSTIFY" wrappingWidth="338.65869140625">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
@@ -54,8 +57,8 @@
 
                      <HBox spacing="80.0">
                        <children>
-                          <Button fx:id="catalogueButton" mnemonicParsing="false" text="Catalogue" />
-                          <Button fx:id="exitButton" mnemonicParsing="false" text="Exit" />
+                          <Button fx:id="catalogueButton" mnemonicParsing="false" onAction="#showCatalogue" text="Catalogue" />
+                          <Button fx:id="exitButton" mnemonicParsing="false" onAction="#exitProgram" text="Exit" />
                        </children>
                <VBox.margin>
                   <Insets left="60.0" top="90.0" />

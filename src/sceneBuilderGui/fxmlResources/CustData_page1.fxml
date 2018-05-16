@@ -8,14 +8,16 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane fx:id="customerData" prefHeight="300.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="customerData" prefHeight="300.0" prefWidth="1000.0"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller = "sceneBuilderGui.controllers.CustDataController">
 
     <!-- Restaurant logo -->
 
     <top>
-        <ImageView fx:id="logo" fitHeight="103.0" fitWidth="388.0" pickOnBounds="true" BorderPane.alignment="CENTER">
+        <ImageView id="logo" fitHeight="103.0" fitWidth="388.0" pickOnBounds="true" BorderPane.alignment="CENTER">
             <image>
-                <Image url="@../../../../img/logo_try.jpg" />
+                <Image url="@../../img/logo_try.jpg" />
             </image>
          <BorderPane.margin>
             <Insets top="30.0" />
@@ -27,7 +29,7 @@
     <!-- Customer's data -->
 
     <center>
-      <FlowPane fx:id="dataInsert" alignment="CENTER">
+      <FlowPane id="dataInsert" alignment="CENTER">
          <children>
             <HBox prefHeight="133.0" prefWidth="756.0" spacing="80.0">
 
@@ -35,14 +37,14 @@
 
        <!-- VBOX contains Field for customer to insert his name, surname and e-mail -->
 
-                  <VBox fx:id="customer" prefHeight="276.0" prefWidth="298.0" spacing="10.0">
+                  <VBox id="customer" prefHeight="276.0" prefWidth="298.0" spacing="10.0">
                      <children>
 
                   <!-- Customer's name field -->
 
-                            <HBox fx:id="name" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="34.0">
+                            <HBox id="name" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="34.0">
                            <children>
-                              <Label text="Name :">
+                              <Label  text="Name :">
                                  <padding>
                                     <Insets left="5.0" />
                                  </padding>
@@ -53,7 +55,7 @@
 
                   <!-- Customer's surname field -->
 
-                            <HBox fx:id="surname" layoutX="18.0" layoutY="18.0" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                            <HBox id="surname" layoutX="18.0" layoutY="18.0" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
                            <children>
                               <Label text="Surname :">
                                  <padding>
@@ -66,7 +68,7 @@
 
                   <!-- Customer's e-mail field -->
 
-                            <HBox fx:id="email" layoutX="10.0" layoutY="80.0" prefHeight="100.0" prefWidth="200.0" spacing="31.0">
+                            <HBox id="email" layoutX="10.0" layoutY="80.0" prefHeight="100.0" prefWidth="200.0" spacing="31.0">
                            <children>
                               <Label text="E-mail :">
                                  <padding>
@@ -92,7 +94,7 @@
 
                   <!-- Reservation date-->
 
-                        <HBox fx:id="date" prefHeight="207.0" prefWidth="298.0" spacing="20.0">
+                        <HBox id="date" prefHeight="207.0" prefWidth="298.0" spacing="20.0">
 
                            <children>
                               <Label text="Date :" />
