@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="cataloguePanel"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+
+   <!-- Section with list of dishes in the catalogue-->
+
+      <Label text="Dishes List " AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+         <font>
+            <Font name="Microsoft Tai Le Bold" size="26.0" />
+         </font>
+      </Label>
+      <Accordion id="Catalogue" layoutX="14.0" layoutY="96.0" prefHeight="274.0" prefWidth="251.0"
+                 AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="70.0">
+
+      <panes>
+
+          <TitledPane animated="false" text="Starters">
+               <content>
+                  <ListView fx:id="startersList" prefHeight="200.0" prefWidth="200.0" />
+               </content>
+          </TitledPane>
+
+          <TitledPane animated="false" text="First Courses">
+               <content>
+                  <ListView fx:id="firstCoursesList" prefHeight="200.0" prefWidth="200.0" />
+               </content>
+          </TitledPane>
+
+          <TitledPane animated="false" text="Main Courses">
+               <content>
+                  <ListView fx:id="mainCoursesList" prefHeight="200.0" prefWidth="200.0" />
+               </content>
+          </TitledPane>
+
+            <TitledPane animated="false" text="Desserts">
+               <content>
+                  <ListView fx:id="dessertsList" prefHeight="200.0" prefWidth="200.0" />
+               </content>
+            </TitledPane>
+
+            <TitledPane animated="false" text="Drinks"
+                        layoutX="10.0" layoutY="103.0" prefHeight="158.0" prefWidth="202.0" >
+               <content>
+                  <ListView fx:id="drinksList" prefHeight="200.0" prefWidth="200.0" />
+               </content>
+            </TitledPane>
+
+        </panes>
+      </Accordion>
+
+   <!-- Section with details of the selected dish -->
+
+      <VBox id=" Details Panel"
+            layoutX="298.0" prefHeight="400.0" prefWidth="282.0" spacing="10.0"
+            AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="298.0"
+            AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+         <children>
+
+            <Label text="Details:">
+               <font>
+                  <Font name="Microsoft Tai Le Bold" size="26.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
+
+            <Text fx:id="namePrice" strokeType="OUTSIDE" strokeWidth="0.0" text="Name and price">
+               <font>
+                  <Font name="Times New Roman Italic" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Text>
+
+            <Label layoutX="20.0" layoutY="10.0" text="Ingredients">
+               <font>
+                  <Font name="Microsoft Tai Le Bold" size="26.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Label>
+
+            <Text fx:id="ingredients"
+                  layoutX="20.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingredients List">
+               <font>
+                  <Font name="Times New Roman Italic" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Text>
+
+            <Label layoutX="10.0" layoutY="169.0" text="Allergenes">
+               <font>
+                  <Font name="Microsoft Tai Le Bold" size="26.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Label>
+
+            <Text fx:id="allergenes"
+                  layoutX="10.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Allergenes List">
+               <font>
+                  <Font name="Times New Roman Italic" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Text>
+
+            <Label layoutX="20.0" layoutY="202.0" text="Filters">
+               <font>
+                  <Font name="Microsoft Tai Le Bold" size="26.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Label>
+
+            <Text fx:id="filters"
+                  layoutX="20.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                  text="Vegan,vegetarian, celiac...">
+               <font>
+                  <Font name="Times New Roman Italic" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Text>
+
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
