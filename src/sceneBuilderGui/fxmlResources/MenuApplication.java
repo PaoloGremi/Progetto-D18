@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import sceneBuilderGui.ConfirmBox;
+import sceneBuilderGui.ExitConfirmBox;
 
 public class MenuApplication extends Application{
 
@@ -27,7 +28,7 @@ public class MenuApplication extends Application{
         window.setOnCloseRequest(e->{
             e.consume();
             exit();
-        });
+         });
         window.setResizable(false);
         window.show();
 
@@ -35,7 +36,8 @@ public class MenuApplication extends Application{
 
     public static void exit(){
 
-        ConfirmBox.display("Exit confirm", "Are you sure?");
+            ExitConfirmBox exitBox = new ExitConfirmBox();
+            exitBox.show();
 
     }
 }

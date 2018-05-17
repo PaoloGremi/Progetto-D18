@@ -13,40 +13,63 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import sceneBuilderGui.fxmlResources.MenuApplication;
 
-public class ConfirmBox {
+public abstract class ConfirmBox {
 
-    public static void display ( String title, String message ) {
+    private Stage confirmBox ;
+    private Scene scene ;
+    private VBox pane ;
+    private HBox buttons ;
+    private Button yesButton, noButton ;
+    private Label question ;
 
-        Stage confirmBox = new Stage() ;
-        confirmBox.initModality(Modality.APPLICATION_MODAL);
+    public ConfirmBox(String title, String message, double width, double height){
+
+        confirmBox = new Stage() ;
         confirmBox.setTitle(title);
 
-        Label question = new Label(message);
-        Button yesButton = new Button("Yes");
-        yesButton.setAlignment(Pos.CENTER);
-        Button noButton = new Button("No");
-        noButton.setAlignment(Pos.CENTER);
+        pane = new VBox();
+        buttons = new HBox();
+        question = new Label(message);
+        yesButton = new Button("Yes");
+        noButton = new Button("No");
 
-        yesButton.setOnAction(e-> {
-            confirmBox.close();
-            Platform.exit();
-        });
-        noButton.setOnAction(e-> confirmBox.close());
-
-        VBox pane = new VBox();
-        HBox buttons = new HBox();
+        setConstraints();
 
         buttons.getChildren().addAll(yesButton, noButton);
+        pane.getChildren().addAll(question,buttons);
+        confirmBox.setScene(new Scene(pane,width,height));
+
+    }
+
+    public void show () {
+
+        try {
+            setActions(this.yesButton, this.noButton);
+            confirmBox.showAndWait();
+        }
+        catch(Exception e){}
+    }
+
+    public Stage getConfirmBox() {
+        return confirmBox;
+    }
+
+    public abstract void setActions(Button yesButton, Button noButton);
+
+    private void setConstraints(){
+
+        noButton.setAlignment(Pos.CENTER);
+        yesButton.setAlignment(Pos.CENTER);
+
         buttons.setAlignment(Pos.CENTER);
         buttons.setPadding(new Insets(10,10,10,10));
         buttons.setSpacing(20.0);
+
         pane.setSpacing(20.0);
         pane.setAlignment(Pos.CENTER);
 
-        pane.getChildren().addAll(question,buttons);
-        confirmBox.setScene(new Scene(pane,300,100));
+        confirmBox.initModality(Modality.APPLICATION_MODAL);
         confirmBox.setResizable(false);
-        confirmBox.showAndWait();
 
 
     }
